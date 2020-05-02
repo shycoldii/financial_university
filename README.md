@@ -1,2 +1,2 @@
 # Financial_University_projects
-My university coding life
+Здесь мир моих маленьких успехов за время нахождения в ПМИиТе
