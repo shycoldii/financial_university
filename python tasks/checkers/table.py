@@ -20,6 +20,32 @@ class Board:
             return True
         else:
             return False
+
+
+    def smart_bot(self,position_1,position_2,format_template):
+        real_list,nums,special_nums,letter=[],[],[],[]
+        if position_1!='8' and position_1!='1' and position_2!='a' and position_2!='h':
+            special_nums.append(self.format[position_2]-1)
+            special_nums.append(self.format[position_2] + 1)
+            nums.append(int(position_1)+1)
+            nums.append(int(position_1)-1)
+            for key,item in self.format.items():
+                if item == special_nums[0] or item  == special_nums[1]:
+                    letter.append(key)
+            real_list.append(f'{letter[0]}{nums[0]}')
+            real_list.append(f'{letter[0]}{nums[1]}')
+            real_list.append(f'{letter[1]}{nums[0]}')
+            real_list.append(f'{letter[1]}{nums[1]}')
+            for i in real_list[::-1]:
+                station=Board().checking(format_template,i[1],i[0])
+                if station==False:
+                    real_list.remove(i)
+            if len(real_list)!=4:
+                return ['000']
+            else:
+                return ['111']
+        else:
+            return ['111']
     def render(self,stream=None,format_template=None):  # stream = (№строки, №столбца, фигура)
         """Меняет состояние доски после каждого вызова"""
         if format_template==None:
@@ -46,6 +72,3 @@ class Board:
             template += separator_2
         template = template[:-52] + separator_1 + header
         return format_template,template
-
-
-
