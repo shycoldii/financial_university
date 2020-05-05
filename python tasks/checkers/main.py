@@ -133,41 +133,78 @@ class Game:
             else:
                 status=0
             move+=1
-            #здесь реализовать подсказку
+            good_list, our_dictionary = Game().prompt(format_template,color)
+            if good_list != []:
+                print('*********ПОДСКАЗКА********')
+                print('Обычно, она доказывает, что вы имеете возможность сразиться!')
+                print('Поэтому даже не пытайтесь не сделать этого...')
+                print('Предупреждение: когда просят ввести "куда" - пишите клетку соперника')
+                random_field=random.choice(good_list)
+                print(f'Вы можете сходить фишкой на следующей клетке: {random_field[0]}{random_field[1]}.')
             while True:
                 our_check_1=input(f'Введите номер строки вашей шашки (которой хотите ходить)')
                 our_check_2 = input(f'Введите букву столбца вашей шашки (которой хотите ходить)')
                 if our_check_1 in ['1', '2', '3', '4', '5', '6', '7', '8'] and our_check_2 in ['a','b','c','d','e','f','g','h']:
                     break
-            good_list, needs = Game().can_to_move(color, our_check_1, our_check_2, format_template)
-            if needs != []:
-                print('***ПОДСКАЗКА***')
-                print('У вас есть возможность побить шашку соперника.')
-                print(f'Рекомендуемый ход: {random.choice(needs)}')
-            while True:
-                position_1=input(f'Введите номер строки для {move}-ого хода')
-                position_2=input(f'Введите букву столбца для {move}-ого хода')
-                if position_1 in ['1', '2', '3', '4', '5', '6', '7', '8'] and position_2 in ['a','b','c','d','e','f','g','h']:
-                    break
-            code=Game.generate_code(position_1,position_2)
-            if (needs != [] and code in needs) or (needs == [] and code in good_list):
-                        station = table.Board().new_checking(format_template, position_1, position_2)
-                        if station != False:
-                            format_template, template = table.Board().render([our_check_1, our_check_2, 'x'],
-                                                                             format_template)
-                        if (station == 'White' and status == 1) or (station == 'Black' and status == 0):
-                                print('!!!ВЫ СОВЕРШИЛИ ПРОБИТИЕ!!!')
-                        if position_1 == '1':
-                                format_template, template = table.Board().render([position_1, position_2, 'Д'],
-                                                                                 format_template)
-                                print(f'!!!{color}-ДАМКА ПОСТАВЛЕНА!!!')
-                        else:
-                                format_template, template = table.Board().render([position_1, position_2, color],
-                                                                                 format_template)
+            code_now = Game.generate_code(our_check_1,our_check_2)
+            if good_list != [] and code_now not in good_list:
+                  print('Пожалуйста, соблюдайте правила. Ваш оппонент намного честнее.')
+                  move-=1
             else:
-                print('Ход недопустим. Возможно, стоит воспользоваться подсказкой. ')
-                move -= 1
-            #тут уже робота
+                while True:
+                    position_1=input(f'Введите номер строки для {move}-ого хода')
+                    position_2=input(f'Введите букву столбца для {move}-ого хода')
+                    if position_1 in ['1', '2', '3', '4', '5', '6', '7', '8'] and position_2 in ['a','b','c','d','e','f','g','h']:
+                        break
+                code=Game.generate_code(position_1,position_2)
+                chores_one,chores_two,chores=[],[],[]
+                diagonals=Game().can_to_move(color, our_check_1, our_check_2, format_template)
+                if our_dictionary!={}:
+                    chores = our_dictionary[code_now]
+                    chores_one = chores[0:len(chores):2]
+                    chores_two = chores[1:len(chores):2]
+                if (good_list != [] and code in chores_one):
+                            hm = chores_one.index(code)
+                            code_3 = chores_two[hm]
+                            station = table.Board().new_checking(format_template, position_1, position_2)
+                            if station != False:
+                                format_template, template = table.Board().render([our_check_1, our_check_2, 'x'],
+                                                                                 format_template)
+                            else:
+                                print('Странная ошибка. Переходите.')
+                                move-=1
+                            if (station == 'White' and status == 1) or (station == 'Black' and status == 0):
+                                    print('!!!ВЫ СОВЕРШИЛИ ПРОБИТИЕ!!!')
+
+
+                            format_template, template = table.Board().render([position_1, position_2, 'x'],
+                                                                                     format_template)
+                            if (code_3[1] == '1' and color == 'Ч') or (code_3[1] == '8' and color == 'Б'):
+                                        format_template, template = table.Board().render([code_3[1], code_3[0], 'Д'],
+                                                                                         format_template)
+                                        print(f'!!!{color}-ДАМКА ПОСТАВЛЕНА!!!')
+                            else:
+                                        format_template, template = table.Board().render([code_3[1], code_3[0], color],
+                                                                                         format_template)
+                elif   (good_list == [] and code in diagonals):
+                    station = table.Board().new_checking(format_template, position_1, position_2)
+                    if station != False:
+                        format_template, template = table.Board().render([our_check_1, our_check_2, 'x'],
+                                                                         format_template)
+                    else:
+                        move-=1
+                        print('Странная ошибка...Переходите.')
+                    if (position_1 == '1' and color == 'Ч') or (position_1 == '8' and color == 'Б'):
+                        format_template, template = table.Board().render([position_1, position_2, 'Д'],
+                                                                         format_template)
+                        print(f'!!!{color}-ДАМКА ПОСТАВЛЕНА!!!')
+                    else:
+                        format_template, template = table.Board().render([position_1, position_2, color],
+                                                                         format_template)
+                else:
+                    print('Ход недопустим. Возможно, стоит воспользоваться подсказкой. ')
+                    move -= 1
+                #тут уже робота
         # тут выходим из игры и записываем в файл
     def can_to_move(self,color,our_check_1,our_check_2,format_template):
         needs=[]
@@ -192,12 +229,157 @@ class Game:
                 needs.append(i)
             elif station == 'Black' and color == 'Б':
                 needs.append(i)
-        return diagonals,needs
+        return diagonals
     def prompt(self,format_template,color):
+        format = {
+            0: 'a',
+            1: 'b',
+            2: 'c',
+            3: 'd',
+            4: 'e',
+            5: 'f',
+            6: 'g',
+            7: 'h',
+        }
+        format_2 = {
+            'a': 0,
+            'b': 1,
+            'c': 2,
+            'd': 3,
+            'e': 4,
+            'f': 5,
+            'g': 6,
+            'h': 7,
+        }
+        good_prompt = []
+        our_dictionary = {}
         for i in range(len(format_template)):
-            for j in range(format_template[i]):
-                if i
+            for j in range(len(format_template[i])):
+                if color == 'Б':
+                    if format_template[i][j]=='Б':
+                        list_diagonals = Game().diagonals(i,j)
+                        for element in list_diagonals:
+                            station = table.Board().new_checking(format_template, element[1], element[0])
+                            next_step,next_next_step = '' ,''
 
+                            if station == 'Black':
+                                try:
+                                    station1= False
+                                    if int(element[1])-1>i and int(format_2[element[0]])>j: #пашет
+                                        next_step=element[0]+element[1]
+                                        next_next_step = format[format_2[element[0]]+1]+str(int(element[1])+1)
+                                        station1 = table.Board().new_checking(format_template,int(element[1])+1, format[format_2[element[0]]+1])
+                                    elif int(element[1])-1>i and int(format_2[element[0]])<j: #пашет
+                                        next_step = element[0] + element[1]
+                                        next_next_step = format[format_2[element[0]] - 1] + str(int(element[1])+ 1)
+                                        station1 = table.Board().new_checking(format_template, int(element[1]) + 1,
+                                                                             format[format_2[element[0]]-1])
+                                    elif int(element[1])-1<i and int(format_2[element[0]])<j:  #пашет
+                                        station1 = table.Board().new_checking(format_template, int(element[1]) -1,
+                                                                             format[format_2[element[0]]-1])
+                                        next_step = element[0] + element[1]
+                                        next_next_step = format[format_2[element[0]] - 1] + str(int(element[1]) - 1)
+                                    elif int(element[1])-1<i and int(format_2[element[0]])>j:
+                                        station1 = table.Board().new_checking(format_template, int(element[1]) -1,
+                                                                             format[format_2[element[0]]+1])
+
+                                        next_step = element[0] + element[1]
+                                        next_next_step = format[format_2[element[0]] + 1] + str(int(element[1]) - 1)
+                                    if station1 == True:
+                                            good_prompt.append(f'{format[j]}{str(i+1)}')
+                                            if f'{format[j]}{str(i+1)}' in our_dictionary:
+                                                our_dictionary[f'{format[j]}{str(i+1)}'] = our_dictionary[f'{format[j]}{str(i+1)}']+[next_step,next_next_step]
+                                            else:
+                                                our_dictionary[f'{format[j]}{str(i + 1)}'] = [next_step,next_next_step]
+                                except:
+                                    station1=False
+
+                else:
+                    if format_template[i][j]=='Ч':
+                        list_diagonals = Game().diagonals(i,j)
+                        for element in list_diagonals:
+                            station = table.Board().new_checking(format_template, element[1], element[0])
+                            next_step, next_next_step = '', ''
+                            if station == 'White':
+                                try:
+                                    station1 = False
+                                    if int(element[1]) - 1 > i and int(format_2[element[0]]) > j:  # пашет
+                                        next_step = element[0] + element[1]
+                                        next_next_step = format[format_2[element[0]] + 1] + str(int(element[1]) + 1)
+                                        station1 = table.Board().new_checking(format_template, int(element[1]) + 1,
+                                                                              format[format_2[element[0]] + 1])
+                                    elif int(element[1]) - 1 > i and int(format_2[element[0]]) < j:  # пашет
+                                        next_step = element[0] + element[1]
+                                        next_next_step = format[format_2[element[0]] - 1] + str(int(element[1]) + 1)
+                                        station1 = table.Board().new_checking(format_template, int(element[1]) + 1,
+                                                                              format[format_2[element[0]] - 1])
+                                    elif int(element[1]) - 1 < i and int(format_2[element[0]]) < j:  # пашет
+                                        station1 = table.Board().new_checking(format_template, int(element[1]) - 1,
+                                                                              format[format_2[element[0]] - 1])
+                                        next_step = element[0] + element[1]
+                                        next_next_step = format[format_2[element[0]] - 1] + str(int(element[1]) - 1)
+                                    elif int(element[1]) - 1 < i and int(format_2[element[0]]) > j:
+                                        station1 = table.Board().new_checking(format_template, int(element[1]) - 1,
+                                                                              format[format_2[element[0]] + 1])
+
+                                        next_step = element[0] + element[1]
+                                        next_next_step = format[format_2[element[0]] + 1] + str(int(element[1]) - 1)
+                                    if station1 == True:
+                                        good_prompt.append(f'{format[j]}{str(i + 1)}')
+                                        if f'{format[j]}{str(i + 1)}' in our_dictionary:
+                                            our_dictionary[f'{format[j]}{str(i + 1)}'] = our_dictionary[
+                                                                                             f'{format[j]}{str(i + 1)}'] + [
+                                                                                             next_step, next_next_step]
+                                        else:
+                                            our_dictionary[f'{format[j]}{str(i + 1)}'] = [next_step, next_next_step]
+                                except:
+                                    station1 = False
+                                print(good_prompt)
+                                print(our_dictionary)
+        return good_prompt,our_dictionary
+    def diagonals(self,i,j):
+        format = {
+            0: 'a',
+            1: 'b',
+            2:  'c',
+            3: 'd',
+            4: 'e',
+            5: 'f',
+             6: 'g',
+             7: 'h',
+        }
+
+        my_list=[]
+
+        ok_1= i-1
+        ok_2 = i+1
+        ok_3 = j-1
+        ok_4 = j+1
+
+        if ok_1<0:
+            if ok_4>7:
+                my_list.append(f'{str(format[j-1])}{str(i+2)}')
+            else:
+                my_list.append(f'{str(format[j -1])}{str(i + 2)}')
+                my_list.append(f'{str(format[j + 1])}{str(i + 2)}')
+        elif ok_3 < 0:
+            if ok_2 > 7:
+                my_list.append(f'{str(format[j + 1])}{str(i )}')
+            else:
+                my_list.append(f'{str(format[j + 1])}{str(i + 2)}')
+                my_list.append(f'{str(format[j + 1])}{str(i )}')
+        elif ok_2 > 7:
+            my_list.append(f'{str(format[j-1 ])}{str(i )}')
+            my_list.append(f'{str(format[j + 1])}{str(i )}')
+        elif ok_4>7:
+            my_list.append(f'{str(format[j -1])}{str(i)}')
+            my_list.append(f'{str(format[j-1 ])}{str(i + 2)}')
+        else:
+            my_list.append(f'{str(format[j-1 ])}{str(i )}')
+            my_list.append(f'{str(format[j + 1])}{str(i + 2)}')
+            my_list.append(f'{str(format[j-1 ])}{str(i + 2)}')
+            my_list.append(f'{str(format[j + 1])}{str(i )}')
+        return my_list
     def generate_diagonal(self,color,our_check_1,our_check_2):
         nums = []
         format = {
@@ -233,6 +415,4 @@ class Game:
                 good.remove(i)
         return good
 Game.start_menu()
-
-
 
