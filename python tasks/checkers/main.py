@@ -112,18 +112,126 @@ class Game:
                           else:
                               format_template, template = table.Board().render([position_1, position_2, 'Ч'], format_template)
                           break
+
         print('********************************************************')
         print('*********************НАЧАЛО ИГРЫ************************')
         print('********************************************************')
         print(template)
+        Game().game_process(template,format_template,color)
+        #здесь вызовем функцию с процессом игры
 
     @staticmethod
     def generate_code(position_1,position_2):
             code=position_2+position_1
             return code
+    def game_process(self,template,format_template,color):
+        move = 0 #счетчик кода
+        while True:
+            print(template)
+            if color=='Ч':
+                status=1 #если игрок играет за черных
+            else:
+                status=0
+            move+=1
+            #здесь реализовать подсказку
+            while True:
+                our_check_1=input(f'Введите номер строки вашей шашки (которой хотите ходить)')
+                our_check_2 = input(f'Введите букву столбца вашей шашки (которой хотите ходить)')
+                if our_check_1 in ['1', '2', '3', '4', '5', '6', '7', '8'] and our_check_2 in ['a','b','c','d','e','f','g','h']:
+                    break
+            good_list, needs = Game().can_to_move(color, our_check_1, our_check_2, format_template)
+            if needs != []:
+                print('***ПОДСКАЗКА***')
+                print('У вас есть возможность побить шашку соперника.')
+                print(f'Рекомендуемый ход: {random.choice(needs)}')
+            while True:
+                position_1=input(f'Введите номер строки для {move}-ого хода')
+                position_2=input(f'Введите букву столбца для {move}-ого хода')
+                if position_1 in ['1', '2', '3', '4', '5', '6', '7', '8'] and position_2 in ['a','b','c','d','e','f','g','h']:
+                    break
+            code=Game.generate_code(position_1,position_2)
+            if (needs != [] and code in needs) or (needs == [] and code in good_list):
+                        station = table.Board().new_checking(format_template, position_1, position_2)
+                        if station != False:
+                            format_template, template = table.Board().render([our_check_1, our_check_2, 'x'],
+                                                                             format_template)
+                        if (station == 'White' and status == 1) or (station == 'Black' and status == 0):
+                                print('!!!ВЫ СОВЕРШИЛИ ПРОБИТИЕ!!!')
+                        if position_1 == '1':
+                                format_template, template = table.Board().render([position_1, position_2, 'Д'],
+                                                                                 format_template)
+                                print(f'!!!{color}-ДАМКА ПОСТАВЛЕНА!!!')
+                        else:
+                                format_template, template = table.Board().render([position_1, position_2, color],
+                                                                                 format_template)
+            else:
+                print('Ход недопустим. Возможно, стоит воспользоваться подсказкой. ')
+                move -= 1
+            #тут уже робота
+        # тут выходим из игры и записываем в файл
+    def can_to_move(self,color,our_check_1,our_check_2,format_template):
+        needs=[]
+        diagonals = Game().generate_diagonal(color, our_check_1, our_check_2)
+        for i in diagonals[::-1]:
+            station = table.Board().new_checking(format_template, i[1], i[0])
+            if (station == 'White' and color == 'Б') or (station == 'Black' and color == 'Ч'):
+                diagonals.remove(i)
+            if station == 'White' and color == 'Ч':
+                needs.append(i)
+                diagonals.remove(i)
+            elif station == 'Black' and color == 'Б':
+                needs.append(i)
+                diagonals.remove(i)
+        if color == 'Ч':
+            before = Game().generate_diagonal('Б', our_check_1, our_check_2)
+        else:
+            before = Game().generate_diagonal('Ч', our_check_1, our_check_2)
+        for i in before:
+            station = table.Board().new_checking(format_template, i[1], i[0])
+            if station == 'White' and color == 'Ч':
+                needs.append(i)
+            elif station == 'Black' and color == 'Б':
+                needs.append(i)
+        return diagonals,needs
+    def prompt(self,format_template,color):
+        for i in range(len(format_template)):
+            for j in range(format_template[i]):
+                if i
 
-
-
+    def generate_diagonal(self,color,our_check_1,our_check_2):
+        nums = []
+        format = {
+            'a': 0,
+            'b': 1,
+            'c': 2,
+            'd': 3,
+            'e': 4,
+            'f': 5,
+            'g': 6,
+            'h': 7,
+        }
+        if color == 'Ч':
+            number = int(our_check_1) - 1
+        else:
+            number = int(our_check_1) + 1
+        if number % 2 == 0:
+                good = [f'a{number}', f'c{number}', f'e{number}', f'g{number}']
+        else:
+                good = [f'b{number}', f'd{number}', f'f{number}', f'h{number}']
+        nums.append(format[our_check_2] + 1)
+        nums.append(format[our_check_2] - 1)
+        if nums[0] == 9:
+            nums.remove(nums[0])
+        elif nums[1] == -1:
+            nums.remove(nums[1])
+        letters = []
+        for key,item in format.items():
+            if item in nums:
+                  letters.append(key+str(number))
+        for i in good[::-1]:
+            if i not in letters:
+                good.remove(i)
+        return good
 Game.start_menu()
 
 

@@ -20,7 +20,15 @@ class Board:
             return True
         else:
             return False
-
+    def new_checking(self,format_template,position_1,position_2):
+        if format_template[int(position_1)-1][self.format[position_2]]==self.f1:
+            return True
+        if format_template[int(position_1)-1][self.format[position_2]]=='Ч':
+            return 'Black'
+        if format_template[int(position_1)-1][self.format[position_2]]=='Б':
+            return 'White'
+        else:
+            return False
 
     def smart_bot(self,position_1,position_2,format_template):
         real_list,nums,special_nums,letter=[],[],[],[]
