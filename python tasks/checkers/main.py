@@ -158,10 +158,11 @@ class Game:
 
         def log_now(move, one, mark, two, king_st):
             try:
-                log[move] = log[move] + [one, mark, two,king_st]
+                log[move] = log[move] + [one, mark, two, king_st]
             except:
-                log[move] = [one, mark, two,king_st]
+                log[move] = [one, mark, two, king_st]
 
+        flag = ''
         kings = []
         move = 0  # счетчик кода
         while True:
@@ -177,6 +178,7 @@ class Game:
                 diagonals_2, our_check_1, our_check_2 = Game().get_info_about_position(format_template, 'Ч')
                 if diagonals_1 == [] and diagonals_2 == []:
                     code_not_ok = 1
+
                 elif diagonals_1 == [] and diagonals_2 != []:
                     win_2 = 1
                 elif diagonals_1 != [] and diagonals_2 == []:
@@ -189,9 +191,11 @@ class Game:
                 if king == 1:
                     print(f'********ПОБЕДИЛ ИГРОК, ИГРАЮЩИЙ ЗА {colors[kings[0]]}********')
                 elif win_1 == 1 or w == 0:
+                    flag = 'X'
                     color_x = 'Б'
                     print(f'******************ПОБЕДИЛ ИГРОК, ИГРАЮЩИЙ ЗА {colors[color_x]}*******************')
                 elif win_2 == 1 or b == 0:
+                    flag = 'X'
                     color_x = 'Ч'
                     print(f'******************ПОБЕДИЛ ИГРОК, ИГРАЮЩИЙ ЗА {colors[color_x]}*******************')
                 else:
@@ -203,7 +207,7 @@ class Game:
             else:
                 status = 0
             move += 1
-            mark, one, two= '', '', ''
+            mark, one, two = '', '', ''
             king_st = ''
             if (status == 1 and move % 2 == 0) or (status == 0 and move % 2 == 1):
                 good_list, our_dictionary = Game.prompt(format_template, color)
@@ -368,6 +372,7 @@ class Game:
                             color1 = 'Ч'
                         diagonals, our_check_1, our_check_2 = Game().get_info_about_position(format_template, color1)
                         random_move = ''
+                        print(diagonals)
                         if diagonals != []:
                             for i in diagonals:
                                 if color1 == 'Ч':
@@ -409,7 +414,7 @@ class Game:
                         log_now(move, one, mark, two, local_king)
 
         print('Лог игры будет записан в этой папке. Хотите сделать рестарт?')
-        Game.go_to_file(log)
+        Game.go_to_file(log, flag)
         ask_it = input('Введите +, если да. Иначе игра завершится. ')
         if ask_it == '+':
             # перезапуск
@@ -418,15 +423,20 @@ class Game:
     @staticmethod
     def restart():
         Game.start_menu()
+
     @staticmethod
-    def go_to_file(log):
-        file = open('log.txt','w+')
-        for key,item in log.items():
-            our_string = f'{key}. {item[0]}{item[1]}{item[2]}{item[3]}'
+    def go_to_file(log, flag):
+        file = open('log.txt', 'w+')
+        for key, item in log.items():
+            if flag != '':
+                our_string = f'{key}. {item[0]}{item[1]}{item[2]}{flag}'
+            else:
+                our_string = f'{key}. {item[0]}{item[1]}{item[2]}{item[3]}'
             file.write(our_string)
             file.write('\n')
         file.close()
         print('Данные сохранены в файл log.txt')
+
     @staticmethod
     def can_to_move(color, our_check_1, our_check_2, format_template):
         needs = []
