@@ -154,99 +154,135 @@ class Game:
         return diagonals, '', ''
 
     def game_process(self, template, format_template, color):
+        kings = []
         move = 0  # счетчик кода
         while True:
             stop_code = 1
+            code_not_ok = 0
+            win_1, win_2 = 0, 0
             print(template)
-            b, w, bw = table.Board.count_checkers(format_template)
+            b, w, bw, king = table.Board.count_checkers(format_template)
+            good_list_1, our_dictionary_1 = Game.prompt(format_template, 'Б')
+            good_list_2, our_dictionary_2 = Game.prompt(format_template, 'Ч')
+            if good_list_1 == [] and good_list_2 == []:
+                diagonals_1, our_check_1, our_check_2 = Game().get_info_about_position(format_template, 'Б')
+                diagonals_2, our_check_1, our_check_2 = Game().get_info_about_position(format_template, 'Ч')
+                if diagonals_1 == [] and diagonals_2 == []:
+                    code_not_ok = 1
+                elif diagonals_1 == [] and diagonals_2 != []:
+                    win_2 = 1
+                elif diagonals_1 != [] and diagonals_2 == []:
+                    win_1 = 1
+            if bw == 0 or king > 0 or code_not_ok == 1 or win_2 == 1 or win_1 == 1 or w == 0 or b == 0:  # игра закончена
+                colors = {'Б': 'БЕЛЫХ', 'Ч': 'ЧЕРНЫХ'}
+                if king == 2:
+                    color1 = 'Б'
+                    print(f'********ПОБЕДИЛ ИГРОК, ИГРАЮЩИЙ ЗА {colors[color1]}********')
+                if king == 1:
+                    print(f'********ПОБЕДИЛ ИГРОК, ИГРАЮЩИЙ ЗА {colors[kings[0]]}********')
+                elif win_1 == 1 or w == 0:
+                    color_x = 'Б'
+                    print(f'******************ПОБЕДИЛ ИГРОК, ИГРАЮЩИЙ ЗА {colors[color_x]}*******************')
+                elif win_2 == 1 or b == 0:
+                    color_x = 'Ч'
+                    print(f'******************ПОБЕДИЛ ИГРОК, ИГРАЮЩИЙ ЗА {colors[color_x]}*******************')
+                else:
+                    print(f'********ПОБЕДИЛА ДРУЖБА********')
+                break
             print(f'На поле сейчас: {w} белых и {b} черных шашек. Всего: {bw}')
-            # тут на тупики и на дамки и на пустоту
             if color == 'Ч':
                 status = 1  # если игрок играет за черных
             else:
                 status = 0
             move += 1
-            good_list, our_dictionary = Game.prompt(format_template, color)
-            if good_list != []:
-                print('******************************ПОДСКАЗКА********************************')
-                print('Обычно, она доказывает, что вы имеете возможность сразиться!')
-                print('Поэтому даже не пытайтесь не сделать этого...')
-                print('Предупреждение: когда просят ввести "куда" - пишите клетку соперника')
-                print('******************************ПОДСКАЗКА********************************')
-                random_field = random.choice(good_list)
-                print(f'Вы можете сходить фишкой на следующей клетке: {random_field[0]}{random_field[1]}.')
-            while True:
-                our_check_1 = input(f'Введите номер строки вашей шашки (которой хотите ходить)')
-                our_check_2 = input(f'Введите букву столбца вашей шашки (которой хотите ходить)')
-                if our_check_1 in ['1', '2', '3', '4', '5', '6', '7', '8'] and our_check_2 in ['a', 'b', 'c', 'd', 'e',
-                                                                                               'f', 'g', 'h']:
-                    check_it = table.Board().new_checking(format_template, our_check_1, our_check_2)
-                    if (check_it == 'Black' and color == 'Ч') or (check_it == 'White' and color == 'Б'):
-                        break
-                    else:
-                        print('Это не ваша шашка.')
-            code_now = Game.generate_code(our_check_1, our_check_2)
-            if good_list != [] and code_now not in good_list:
-                print('Пожалуйста, соблюдайте правила. Ваш оппонент намного честнее.')
-                move -= 1
-                stop_code = 0
-            else:
+            if (status == 1 and move % 2 == 0) or (status == 0 and move % 2 == 1):
+                good_list, our_dictionary = Game.prompt(format_template, color)
+                if good_list != []:
+                    print('******************************ПОДСКАЗКА********************************')
+                    print('Обычно, она доказывает, что вы имеете возможность сразиться!')
+                    print('Поэтому даже не пытайтесь не сделать этого...')
+                    print('Предупреждение: когда просят ввести "куда" - пишите клетку соперника')
+                    print('******************************ПОДСКАЗКА********************************')
+                    random_field = random.choice(good_list)
+                    print(f'Вы можете сходить фишкой на следующей клетке: {random_field[0]}{random_field[1]}.')
                 while True:
-                    position_1 = input(f'Введите номер строки для {move}-ого хода')
-                    position_2 = input(f'Введите букву столбца для {move}-ого хода')
-                    if position_1 in ['1', '2', '3', '4', '5', '6', '7', '8'] and position_2 in ['a', 'b', 'c', 'd',
-                                                                                                 'e', 'f', 'g', 'h']:
-                        break
-                code = Game.generate_code(position_1, position_2)
-                chores_one, chores_two, chores = [], [], []
-                diagonals = Game.can_to_move(color, our_check_1, our_check_2, format_template)
-                if our_dictionary != {}:
-                    chores = our_dictionary[code_now]
-                    chores_one = chores[0:len(chores):2]
-                    chores_two = chores[1:len(chores):2]
-                if (good_list != [] and code in chores_one):
-                    hm = chores_one.index(code)
-                    code_3 = chores_two[hm]
-                    station = table.Board().new_checking(format_template, position_1, position_2)
-                    if station != False:
-                        format_template, template = table.Board().render([our_check_1, our_check_2, 'x'],
-                                                                         format_template)
-                    else:
-                        print('Странная ошибка. Переходите.')
-                        stop_code = 0
-                        move -= 1
-                    if (station == 'White' and status == 1) or (station == 'Black' and status == 0):
-                        print('!!!ВЫ СОВЕРШИЛИ ПРОБИТИЕ!!!')
-
-                    format_template, template = table.Board().render([position_1, position_2, 'x'],
-                                                                     format_template)
-                    if (code_3[1] == '1' and color == 'Ч') or (code_3[1] == '8' and color == 'Б'):
-                        format_template, template = table.Board().render([code_3[1], code_3[0], 'Д'],
-                                                                         format_template)
-                        print(f'!!!{color}-ДАМКА ПОСТАВЛЕНА!!!')
-                    else:
-                        format_template, template = table.Board().render([code_3[1], code_3[0], color],
-                                                                         format_template)
-                elif (good_list == [] and code in diagonals):
-                    station = table.Board().new_checking(format_template, position_1, position_2)
-                    if station != False:
-                        format_template, template = table.Board().render([our_check_1, our_check_2, 'x'],
-                                                                         format_template)
-                    else:
-                        move -= 1
-                        print('Странная ошибка...Переходите.')
-                        stop_code = 0
-                    if (position_1 == '1' and color == 'Ч') or (position_1 == '8' and color == 'Б'):
-                        format_template, template = table.Board().render([position_1, position_2, 'Д'],
-                                                                         format_template)
-                        print(f'!!!{color}-ДАМКА ПОСТАВЛЕНА!!!')
-                    else:
-                        format_template, template = table.Board().render([position_1, position_2, color],
-                                                                         format_template)
-                else:
-                    print('Ход недопустим. Возможно, стоит воспользоваться подсказкой. ')
-                    stop_code = 0
+                    our_check_1 = input(f'Введите номер строки вашей шашки (которой хотите ходить)')
+                    our_check_2 = input(f'Введите букву столбца вашей шашки (которой хотите ходить)')
+                    if our_check_1 in ['1', '2', '3', '4', '5', '6', '7', '8'] and our_check_2 in ['a', 'b', 'c', 'd',
+                                                                                                   'e',
+                                                                                                   'f', 'g', 'h']:
+                        check_it = table.Board().new_checking(format_template, our_check_1, our_check_2)
+                        if (check_it == 'Black' and color == 'Ч') or (check_it == 'White' and color == 'Б'):
+                            break
+                        else:
+                            print('Это не ваша шашка.')
+                code_now = Game.generate_code(our_check_1, our_check_2)
+                if good_list != [] and code_now not in good_list:
+                    print('Пожалуйста, соблюдайте правила. Ваш оппонент намного честнее.')
                     move -= 1
+                    stop_code = 0
+                else:
+                    while True:
+                        position_1 = input(f'Введите номер строки для {move}-ого хода')
+                        position_2 = input(f'Введите букву столбца для {move}-ого хода')
+                        if position_1 in ['1', '2', '3', '4', '5', '6', '7', '8'] and position_2 in ['a', 'b', 'c', 'd',
+                                                                                                     'e', 'f', 'g',
+                                                                                                     'h']:
+                            break
+                    code = Game.generate_code(position_1, position_2)
+                    chores_one, chores_two, chores = [], [], []
+                    diagonals = Game.can_to_move(color, our_check_1, our_check_2, format_template)
+                    if our_dictionary != {}:
+                        chores = our_dictionary[code_now]
+                        chores_one = chores[0:len(chores):2]
+                        chores_two = chores[1:len(chores):2]
+                    if (good_list != [] and code in chores_one):
+                        hm = chores_one.index(code)
+                        code_3 = chores_two[hm]
+                        station = table.Board().new_checking(format_template, position_1, position_2)
+                        if station != False:
+                            format_template, template = table.Board().render([our_check_1, our_check_2, 'x'],
+                                                                             format_template)
+                        else:
+                            print('Странная ошибка. Переходите.')
+                            stop_code = 0
+                            move -= 1
+                        if (station == 'White' and status == 1) or (station == 'Black' and status == 0):
+                            print('!!!ВЫ СОВЕРШИЛИ ПРОБИТИЕ!!!')
+
+                        format_template, template = table.Board().render([position_1, position_2, 'x'],
+                                                                         format_template)
+                        if (code_3[1] == '1' and color == 'Ч') or (code_3[1] == '8' and color == 'Б'):
+                            format_template, template = table.Board().render([code_3[1], code_3[0], 'Д'],
+                                                                             format_template)
+                            print(f'!!!{color}-ДАМКА ПОСТАВЛЕНА!!!')
+                            kings.append(color)
+                        else:
+                            format_template, template = table.Board().render([code_3[1], code_3[0], color],
+                                                                             format_template)
+                    elif (good_list == [] and code in diagonals):
+                        print(diagonals)
+                        station = table.Board().new_checking(format_template, position_1, position_2)
+                        if station != False:
+                            format_template, template = table.Board().render([our_check_1, our_check_2, 'x'],
+                                                                             format_template)
+                        else:
+                            move -= 1
+                            print('Странная ошибка...Переходите.')
+                            stop_code = 0
+                        if (position_1 == '1' and color == 'Ч') or (position_1 == '8' and color == 'Б'):
+                            format_template, template = table.Board().render([position_1, position_2, 'Д'],
+                                                                             format_template)
+                            print(f'!!!{color}-ДАМКА ПОСТАВЛЕНА!!!')
+                            kings.append(color)
+                        else:
+                            format_template, template = table.Board().render([position_1, position_2, color],
+                                                                             format_template)
+                    else:
+                        print('Ход недопустим. Возможно, стоит воспользоваться подсказкой. ')
+                        stop_code = 0
+                        move -= 1
+            if (status == 1 and move % 2 == 1) or (status == 0 and move % 2 == 0):
                 # тут уже робота
                 if stop_code == 1:
                     if status == 1:
@@ -282,7 +318,7 @@ class Game:
                                                                              format_template)
                         format_template, template = table.Board().render([random_one[1], random_one[0], 'x'],
                                                                          format_template)
-                        if status == 'Ч':
+                        if status == 1:
                             color1 = 'Б'
                         else:
                             color1 = 'Ч'
@@ -290,12 +326,14 @@ class Game:
                             format_template, template = table.Board().render([random_two[1], random_two[0], 'Д'],
                                                                              format_template)
                             print(f'!!!{color1}-ДАМКА ПОСТАВЛЕНА!!!')
+                            kings.append(color1)
                         else:
+                            print(color1)
                             format_template, template = table.Board().render([random_two[1], random_two[0], color1],
                                                                              format_template)
                         print('Бот побил.')
                     else:
-                        if status == 'Ч':
+                        if status == 1:
                             color1 = 'Б'
                         else:
                             color1 = 'Ч'
@@ -323,13 +361,22 @@ class Game:
                                 format_template, template = table.Board().render([random_move[1], random_move[0], 'Д'],
                                                                                  format_template)
                                 print(f'!!!{color1}-ДАМКА ПОСТАВЛЕНА!!!')
+                                kings.append(color1)
                             else:
                                 format_template, template = table.Board().render(
                                     [random_move[1], random_move[0], color1],
                                     format_template)
                             print('Бот сходил.')
 
-        # тут выходим из игры и записываем в файл
+        print('Лог игры будет записан в этой папке. Хотите сделать рестарт?')
+        ask_it = input('Введите +, если да. Иначе игра завершится. ')
+        if ask_it == '+':
+            # перезапуск
+            Game.restart()
+
+    @staticmethod
+    def restart():
+        Game.start_menu()
 
     @staticmethod
     def can_to_move(color, our_check_1, our_check_2, format_template):

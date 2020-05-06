@@ -72,12 +72,13 @@ class Board:
 
     @staticmethod
     def count_checkers(format_template):
-        black,white,count = 0,0,0
+        black,white,count,king = 0,0,0,0
         for i in format_template:
             black += i.count('Ч')
             white += i.count('Б')
+            king += i.count('Д')
         count = black + white
-        return black,white,count
+        return black,white,count,king
     def render(self,stream=None,format_template=None):  # stream = (№строки, №столбца, фигура)
         """Меняет состояние доски после каждого вызова"""
         if format_template==None:
