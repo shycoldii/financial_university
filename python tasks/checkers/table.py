@@ -1,3 +1,4 @@
+
 class Board:
 
     def __init__(self):
@@ -13,6 +14,16 @@ class Board:
             'f': 5,
             'g': 6,
             'h': 7,
+        }
+        self.format_2 = {
+            0: 'a',
+            1: 'b',
+            2: 'c',
+            3: 'd',
+            4: 'e',
+            5: 'f',
+            6: 'g',
+            7: 'h',
         }
 
     def checking(self,format_template,position_1,position_2):
@@ -32,6 +43,7 @@ class Board:
                 return False
         except:
             return False
+
 
     def smart_bot(self,position_1,position_2,format_template):
         real_list,nums,special_nums,letter=[],[],[],[]
@@ -57,6 +69,15 @@ class Board:
                 return ['111']
         else:
             return ['111']
+
+    @staticmethod
+    def count_checkers(format_template):
+        black,white,count = 0,0,0
+        for i in format_template:
+            black += i.count('Ч')
+            white += i.count('Б')
+        count = black + white
+        return black,white,count
     def render(self,stream=None,format_template=None):  # stream = (№строки, №столбца, фигура)
         """Меняет состояние доски после каждого вызова"""
         if format_template==None:
