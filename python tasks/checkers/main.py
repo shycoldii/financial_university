@@ -154,6 +154,14 @@ class Game:
         return diagonals, '', ''
 
     def game_process(self, template, format_template, color):
+        log = {}
+
+        def log_now(move, one, mark, two, king_st):
+            try:
+                log[move] = log[move] + [one, mark, two,king_st]
+            except:
+                log[move] = [one, mark, two,king_st]
+
         kings = []
         move = 0  # счетчик кода
         while True:
@@ -195,6 +203,8 @@ class Game:
             else:
                 status = 0
             move += 1
+            mark, one, two= '', '', ''
+            king_st = ''
             if (status == 1 and move % 2 == 0) or (status == 0 and move % 2 == 1):
                 good_list, our_dictionary = Game.prompt(format_template, color)
                 if good_list != []:
@@ -217,6 +227,7 @@ class Game:
                         else:
                             print('Это не ваша шашка.')
                 code_now = Game.generate_code(our_check_1, our_check_2)
+
                 if good_list != [] and code_now not in good_list:
                     print('Пожалуйста, соблюдайте правила. Ваш оппонент намного честнее.')
                     move -= 1
@@ -232,11 +243,14 @@ class Game:
                     code = Game.generate_code(position_1, position_2)
                     chores_one, chores_two, chores = [], [], []
                     diagonals = Game.can_to_move(color, our_check_1, our_check_2, format_template)
+
                     if our_dictionary != {}:
                         chores = our_dictionary[code_now]
                         chores_one = chores[0:len(chores):2]
                         chores_two = chores[1:len(chores):2]
                     if (good_list != [] and code in chores_one):
+                        mark = ':'
+                        one = code_now
                         hm = chores_one.index(code)
                         code_3 = chores_two[hm]
                         station = table.Board().new_checking(format_template, position_1, position_2)
@@ -249,7 +263,7 @@ class Game:
                             move -= 1
                         if (station == 'White' and status == 1) or (station == 'Black' and status == 0):
                             print('!!!ВЫ СОВЕРШИЛИ ПРОБИТИЕ!!!')
-
+                        two = code_3
                         format_template, template = table.Board().render([position_1, position_2, 'x'],
                                                                          format_template)
                         if (code_3[1] == '1' and color == 'Ч') or (code_3[1] == '8' and color == 'Б'):
@@ -257,11 +271,14 @@ class Game:
                                                                              format_template)
                             print(f'!!!{color}-ДАМКА ПОСТАВЛЕНА!!!')
                             kings.append(color)
+                            king_st = 'X'
                         else:
                             format_template, template = table.Board().render([code_3[1], code_3[0], color],
                                                                              format_template)
                     elif (good_list == [] and code in diagonals):
-                        print(diagonals)
+                        mark = '-'
+                        one = code_now
+                        two = code
                         station = table.Board().new_checking(format_template, position_1, position_2)
                         if station != False:
                             format_template, template = table.Board().render([our_check_1, our_check_2, 'x'],
@@ -275,6 +292,7 @@ class Game:
                                                                              format_template)
                             print(f'!!!{color}-ДАМКА ПОСТАВЛЕНА!!!')
                             kings.append(color)
+                            king_st = 'X'
                         else:
                             format_template, template = table.Board().render([position_1, position_2, color],
                                                                              format_template)
@@ -282,6 +300,13 @@ class Game:
                         print('Ход недопустим. Возможно, стоит воспользоваться подсказкой. ')
                         stop_code = 0
                         move -= 1
+                # лог
+                if mark != '' and one != '' and two != '':
+                    if kings != []:
+                        local_king = 'X'
+                    else:
+                        local_king = ''
+                    log_now(move, one, mark, two, local_king)
             if (status == 1 and move % 2 == 1) or (status == 0 and move % 2 == 0):
                 # тут уже робота
                 if stop_code == 1:
@@ -290,6 +315,7 @@ class Game:
                     else:
                         good_list, our_dictionary = Game.prompt(format_template, 'Ч')
                     if good_list != []:
+                        mark = ':'
                         random_field = ''
                         random_one = ''
                         random_two = ''
@@ -327,12 +353,15 @@ class Game:
                                                                              format_template)
                             print(f'!!!{color1}-ДАМКА ПОСТАВЛЕНА!!!')
                             kings.append(color1)
+                            king_st = 'X'
                         else:
-                            print(color1)
                             format_template, template = table.Board().render([random_two[1], random_two[0], color1],
                                                                              format_template)
                         print('Бот побил.')
+                        one = random_field
+                        two = random_two
                     else:
+                        mark = '-'
                         if status == 1:
                             color1 = 'Б'
                         else:
@@ -362,13 +391,25 @@ class Game:
                                                                                  format_template)
                                 print(f'!!!{color1}-ДАМКА ПОСТАВЛЕНА!!!')
                                 kings.append(color1)
+                                king_st = 'X'
                             else:
                                 format_template, template = table.Board().render(
                                     [random_move[1], random_move[0], color1],
                                     format_template)
                             print('Бот сходил.')
+                            one = str(our_check_2) + str(our_check_1)
+                            two = random_move
+                    # лог
+                    if mark != '' and one != '' and two != '':
+
+                        if kings != []:
+                            local_king = 'X'
+                        else:
+                            local_king = ''
+                        log_now(move, one, mark, two, local_king)
 
         print('Лог игры будет записан в этой папке. Хотите сделать рестарт?')
+        Game.go_to_file(log)
         ask_it = input('Введите +, если да. Иначе игра завершится. ')
         if ask_it == '+':
             # перезапуск
@@ -377,7 +418,15 @@ class Game:
     @staticmethod
     def restart():
         Game.start_menu()
-
+    @staticmethod
+    def go_to_file(log):
+        file = open('log.txt','w+')
+        for key,item in log.items():
+            our_string = f'{key}. {item[0]}{item[1]}{item[2]}{item[3]}'
+            file.write(our_string)
+            file.write('\n')
+        file.close()
+        print('Данные сохранены в файл log.txt')
     @staticmethod
     def can_to_move(color, our_check_1, our_check_2, format_template):
         needs = []
