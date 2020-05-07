@@ -19,6 +19,7 @@ class Game:
 
     @staticmethod
     def start_menu():
+        """Общение с пользователем и выбор цвета"""
         colors = {
             'Ч': 'черных',
             'Б': 'белых',
@@ -39,7 +40,7 @@ class Game:
 
     @staticmethod
     def default_fields():
-        """Доступные клетки для white/black"""
+        """Возвращает два массива white/black - доступные клетки"""
         white = []
         black = []
         for i in range(1, 9):
@@ -69,6 +70,7 @@ class Game:
 
     @staticmethod
     def set_checkers(color):
+        """Начало игры, выставление шашек. Генерация поля"""
         format_template, template = table.Board().render()
         move = 0
         white, black = Game.default_fields()
@@ -138,10 +140,12 @@ class Game:
 
     @staticmethod
     def generate_code(position_1, position_2):
+        """Генератор кода вида f2 для удобного использования"""
         code = position_2 + position_1
         return code
 
     def get_info_about_position(self, format_template, color):
+        """возвращает информацию о доступных диагоналях"""
         diagonals = []
         for i in range(len(format_template)):
             for j in range(len(format_template[i])):
@@ -154,6 +158,7 @@ class Game:
         return diagonals, '', ''
 
     def game_process(self, template, format_template, color):
+        """Главная функция игры. Здесь происходит весь основной процесс"""
         log = {}
 
         def log_now(move, one, mark, two, king_st):
@@ -422,10 +427,12 @@ class Game:
 
     @staticmethod
     def restart():
+        """Рестарт игры"""
         Game.start_menu()
 
     @staticmethod
     def go_to_file(log, flag):
+        """Запись  в файл собранных данных """
         file = open('log.txt', 'w+')
         for key, item in log.items():
             if flag != '':
@@ -439,32 +446,23 @@ class Game:
 
     @staticmethod
     def can_to_move(color, our_check_1, our_check_2, format_template):
-        needs = []
+        """Проверка на передвижение. Возвращает  доступные diagonals."""
         diagonals = Game.generate_diagonal(color, our_check_1, our_check_2)
         for i in diagonals[::-1]:
             station = table.Board().new_checking(format_template, i[1], i[0])
             if (station == 'White' and color == 'Б') or (station == 'Black' and color == 'Ч'):
                 diagonals.remove(i)
             if station == 'White' and color == 'Ч':
-                needs.append(i)
                 diagonals.remove(i)
             elif station == 'Black' and color == 'Б':
-                needs.append(i)
                 diagonals.remove(i)
-        if color == 'Ч':
-            before = Game.generate_diagonal('Б', our_check_1, our_check_2)
-        else:
-            before = Game.generate_diagonal('Ч', our_check_1, our_check_2)
-        for i in before:
-            station = table.Board().new_checking(format_template, i[1], i[0])
-            if station == 'White' and color == 'Ч':
-                needs.append(i)
-            elif station == 'Black' and color == 'Б':
-                needs.append(i)
         return diagonals
 
     @staticmethod
     def prompt(format_template, color):
+        """диагональная логика удара. return our_dictionary - словарь с ходами
+                                             good_list - возможные ходы
+        """
         format = {
             0: 'a',
             1: 'b',
@@ -544,6 +542,7 @@ class Game:
         return good_prompt, our_dictionary
 
     def diagonals(self, i, j):
+        """универсальная функция для создания всех диагоналей для клетки"""
         format = {
             0: 'a',
             1: 'b',
@@ -589,6 +588,7 @@ class Game:
 
     @staticmethod
     def generate_diagonal(color, our_check_1, our_check_2):
+        """генератор диагоналей для can_to_move"""
         nums = []
         format = {
             'a': 0,
