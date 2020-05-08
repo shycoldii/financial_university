@@ -1,0 +1,112 @@
+01.12.2019MOSCOW->>(000101)->>BAKU->>(000110)->>ABU-DABI->>(000111)->>SINGAPUR->>(001000)->>TOKIO
+1 None
+2 None
+3 None
+4 None
+5 None
+6 None
+7 None
+03.12.2019MOSCOW->>(000101)->>BAKU
+1 None
+2 None
+3 None
+4 None
+5 None
+6 None
+7 None
+12.12.2019MOSCOW->>(000101)->>BAKU
+1 None
+2 None
+3 None
+4 None
+5 None
+6 None
+7 None
+14.11.2019SAINT-PETERSBURG->>(001101)->>PARIS
+1 ff ff ff
+2 None
+3 None
+4 None
+5 None
+6 None
+7 None
+17.11.2019MOSCOW->>(000101)->>BAKU
+1 None
+2 None
+3 None
+4 None
+5 None
+6 None
+7 None
+23.11.2019MOSCOW->>(000101)->>BAKU->>(000110)->>ABU-DABI->>(000111)->>SINGAPUR->>(001000)->>TOKIO
+1 None
+2 None
+3 None
+4 None
+5 None
+6 None
+7 None
+19.11.2019EGYPT->>(001011)->>SINGAPUR
+1 None
+2 None
+3 None
+4 None
+5 None
+6 None
+7 None
+21.12.2019HELSINKI->>(000100)->>SINGAPUR->>(001000)->>TOKIO
+1 None
+2 None
+3 None
+4 None
+5 None
+6 None
+7 None
+31.11.2019MOSCOW->>(000010)->>BERLIN
+1 None
+2 None
+3 None
+4 None
+5 None
+6 None
+7 None
+11.12.2019MOSCOW->>(000000)->>RIGA
+1 None
+2 None
+3 None
+4 None
+5 None
+6 None
+7 None
+19.11.2019MOSCOW->>(000010)->>BERLIN
+1 None
+2 None
+3 None
+4 None
+5 None
+6 None
+7 None
+30.11.2019MOSCOW->>(000101)->>BAKU->>(000110)->>ABU-DABI->>(000111)->>SINGAPUR->>(001000)->>TOKIO
+1 Alexandrova Darya Igorevna
+2 None
+3 None
+4 None
+5 None
+6 None
+7 None
+27.11.2019MOSCOW->>(000000)->>RIGA
+1 None
+2 None
+3 None
+4 None
+5 None
+6 None
+7 None
+26.11.2019MOSCOW->>(000000)->>RIGA
+1 dfghj fgh fgh
+2 None
+3 None
+4 alex da ig
+5 None
+6 None
+7 None
