@@ -1,5 +1,6 @@
 # Financial_University_projects
 **Author:**  student PI19-3 Alexandrova Dasha
+***
 Здесь мир моих маленьких успехов за время нахождения в ПМИиТе
 ***
 ## Что тут обитает?
