@@ -7,5 +7,4 @@
 `python tasks` - это ***папка*** с заданиями из вуза. 
 ## Что еще здесь будет?
  полагаю, много чего интересного, связанного не только с вузовской практикой
-## Gallery
 ![page1](https://github.com/shycoldii/Financial_University_projects/blob/master/gallery/VTuVfkLOKYo%20(1).jpg)
