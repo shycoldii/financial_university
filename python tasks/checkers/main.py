@@ -162,6 +162,14 @@ class Game:
         log = {}
 
         def log_now(move, one, mark, two, king_st):
+            numbers = {}
+            key = 1
+            for i in range(1,move+1,2):
+                  numbers[key] = [i,i+1]
+                  key +=1
+            for k,i in numbers.items():
+                if move in i:
+                    move = k
             try:
                 log[move] = log[move] + [one, mark, two, king_st]
             except:
@@ -438,7 +446,10 @@ class Game:
             if flag != '':
                 our_string = f'{key}. {item[0]}{item[1]}{item[2]}{flag}'
             else:
-                our_string = f'{key}. {item[0]}{item[1]}{item[2]}{item[3]}'
+                if len(item) > 4:
+                    our_string = f'{key}. {item[0]}{item[1]}{item[2]}{item[3]}  {item[4]}{item[5]}{item[6]}{item[7]}'
+                else:
+                    our_string = f'{key}. {item[0]}{item[1]}{item[2]}{item[3]}'
             file.write(our_string)
             file.write('\n')
         file.close()
