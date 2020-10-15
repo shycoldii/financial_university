@@ -1,8 +1,8 @@
 import pygame
 from random import uniform, randint
 import numpy
-
-
+import math
+import tkinter
 (width, height) = (1024, 1024)
 
 
@@ -67,7 +67,15 @@ class star:
         if self.sx ==0 or self.sy == 0 or abs(self.sx) > 1 or abs(self.sy) > 1 or self.z < 0.01:
             self.reset()
 
+
     def show(self, screen):
+        def drawRegularPolygon(surface, color, numSides, tiltAngle, x, y, radius):
+            pts = []
+            for i in range(numSides):
+                x = x + radius * math.cos(tiltAngle + math.pi * 2 * i / numSides)
+                y = y + radius * math.sin(tiltAngle + math.pi * 2 * i / numSides)
+                pts.append([int(x), int(y)])
+            pygame.draw.polygon(surface, color, pts)
         """показ звездного поля"""
         screen_x = int(numpy.interp(self.sx, [-1,1], [0, screen.get_width()]))
         screen_y = int(numpy.interp(self.sy, [-1,1], [0, screen.get_height()]))
@@ -75,7 +83,24 @@ class star:
 
         bright = numpy.interp(self.z,[0,1], [1.0,0.0])
         screen_color = tuple(map(lambda x: int(x * bright), self.color))
-        pygame.draw.ellipse(screen,screen_color,pygame.Rect(screen_x, screen_y, radius,radius))
+        n=5
+        radius = radius / 2
+        r=[]
+        for k in range(n):
+            if n % 2 == 0:
+                k1 = (k + n / 2 - 1) % n
+            else:
+                k1 = (k + (n - 1) / 2) % n
+
+            p1 = (screen_x + radius * math.cos(2 * 3.14 * k / n), screen_y + radius * math.sin(2 * 3.14 * k / n))
+            p2 = (screen_x + radius * math.cos(2 * 3.14 * k1 / n), screen_y + radius * math.sin(2 * 3.14 * k1 / n))
+            r.append(p1)
+            r.append(p2)
+
+            pygame.draw.line(screen,self.color,p1,p2)
+        #print(r)
+        #pygame.draw.polygon(screen,self.color,r)
+        #pygame.draw.ellipse(screen,screen_color,pygame.Rect(screen_x, screen_y, radius,radius))
 
 
 pygame.init()
