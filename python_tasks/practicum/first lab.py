@@ -39,14 +39,15 @@ def create_path(x,y,r,delta,start=0):
     ang = start % 360 #координата на окружности от 0 до 360
     while True:
         yield x + r*cos(ang), y + r*sin(ang)
-        ang = (ang+delta) % 360
+        ang = (ang-delta) % 360 #здесь можем менять направление вращения
 def updating(canvas,id,x,y,path_iter):
     """Итерация и новые позиции"""
     x, y = next(path_iter)
     x0, y0, x1, y1 = canvas.coords(id)
     oldx, oldy = (x0 + x1) // 2, (y0 + y1) // 2
-    dx, dy = x - oldx,y - oldy  # amount of movement
+    dx, dy = x - oldx,y - oldy  # количество движения
     canvas.move(id, dx, dy)
     canvas.after(100, updating, canvas, id, x,y,path_iter) #первый параметр отвечает за скорость
+
 if __name__ =="__main__":
     main()
