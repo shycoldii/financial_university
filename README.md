@@ -7,4 +7,6 @@
 + [R](https://github.com/shycoldii/Financial_University_projects/tree/master/R%20prac)
 + [Java](https://github.com/shycoldii/FU_Java)
 
-<img src="https://vignette.wikia.nocookie.net/pokemon/images/a/a7/196Espeon.png/revision/latest/scale-to-width-down/340?cb=20170109061103&path-prefix=ru"  align="right"/>
+
+<img src="https://sun9-64.userapi.com/8TK8Vh8caACyP1X64e-s0cNTvHrsGC5mdPy_lA/7QewY8CwjtE.jpg"  align="right"/>
+
