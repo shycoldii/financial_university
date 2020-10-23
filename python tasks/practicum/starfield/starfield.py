@@ -97,10 +97,10 @@ class star:
             r.append(p1)
             r.append(p2)
 
-            pygame.draw.line(screen,self.color,p1,p2)
+            #pygame.draw.line(screen,self.color,p1,p2)
         #print(r)
         #pygame.draw.polygon(screen,self.color,r)
-        #pygame.draw.ellipse(screen,screen_color,pygame.Rect(screen_x, screen_y, radius,radius))
+        pygame.draw.ellipse(screen,screen_color,pygame.Rect(screen_x, screen_y, radius,radius))
 
 
 pygame.init()
