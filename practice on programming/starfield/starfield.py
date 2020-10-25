@@ -2,7 +2,7 @@ import pygame
 from random import uniform, randint
 import numpy
 import math
-import tkinter
+
 (width, height) = (1024, 1024)
 
 

@@ -8,6 +8,7 @@ cos = lambda degs: math.cos(math.radians(degs)) #помогает нам на о
 def main():
    root = Tk()
    canvas = Canvas(root, width=600, height=600) #создает окно 600 на 600
+   canvas.config(bg='black')
    canvas.pack()
    creating_oval(canvas,root)
    motion(canvas,root)
@@ -17,7 +18,7 @@ def creating_oval(canvas,root):
     :param root: объект root
     :return: Фиолетовый круг нужного размера
     """
-    color = '#bf95bf'
+    color = '#BDB76B'
     x0 = 100
     y0 = 100
     d = 400
@@ -28,7 +29,7 @@ def bounds(x,y,r):
     return (x + r*cos(0),   y + r*sin(270),
             x + r*cos(180), y + r*sin(90))
 def motion(canvas,root):
-    point = canvas.create_oval(bounds(300+200,300,10),fill="black",width=0) #поставили точку на окружности
+    point = canvas.create_oval(bounds(300+200,300,10),fill="#FFD700",width=0) #поставили точку на окружности
     orbital_radius = math.hypot(300 - 500, 300 - 300)
     path = create_path(300,300,orbital_radius,10) #первые параметры отвечают за направление движения
     next(path)
