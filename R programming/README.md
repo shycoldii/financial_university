@@ -8,4 +8,4 @@
 
 + lab4,5,6 - лабораторные работы на понимание разных тем
 
-<img src="https://go-pokemon.ru/uploads/posts/2019-05/1558374775_leafeon.png">
+<img src="https://static.wikia.nocookie.net/pokemon/images/f/f5/470Leafeon.png/revision/latest/scale-to-width-down/340?cb=20140329041036" align="right">
