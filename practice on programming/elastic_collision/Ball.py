@@ -57,10 +57,10 @@ class ball:
 
         def elastic_collision(ob1, ob2, t):
             """
-            :param ob1: объект первого шарика
-            :param ob2: объект второго шарика
+            :param ob1: первый шарик
+            :param ob2:  второй шарик
             :param t: время
-            :return: vx,xy
+            :return: vx,vy
             """
             g=1000
             # сколько времени прошло для каждого относительно одного
@@ -70,32 +70,29 @@ class ball:
             v1y = g * t1 + ob1.vy
             v2y = g * t2 + ob2.vy
 
-            dx = ob2.coords[0] - ob1.coords[0]
-            if dx == 0:
-                phi = math.pi / 2
-            else:
-                phi = math.atan((ob2.coords[1] - ob1.coords[1]) / dx)
-
             def vector_angle(v):
                 ba = np.array(v)
                 dot = ba[0]
                 det = ba[1]
                 return math.atan2(det, dot)
-
-            #находим углы между ними по двум проекциям
+            #считаем углы проекций
             theta1 = vector_angle([ob1.vx, v1y])
             theta2 = vector_angle([ob2.vx, v2y])
 
-            #находим новые скорости
+            dx = ob2.coords[0] - ob1.coords[0]
+            if dx == 0:
+                phi = math.pi / 2
+            else:
+                phi = math.atan((ob2.coords[1] - ob1.coords[1]) / dx)
+            #находим полные скорости каждого из шариков
             v1 = math.sqrt(ob1.vx * ob1.vx + v1y * v1y)
             v2 = math.sqrt(ob2.vx * ob2.vx + v2y * v2y)
-            #считаем новые проекции скроростей
+
             vx = (v1 * math.cos(theta1 - phi) * (ob1.m - ob2.m) + 2 * ob2.m * v2 * math.cos(theta2 - phi)) / (ob1.m + ob2.m)
+            vy = vx
             vx = vx * math.cos(phi) + v1 * math.sin(theta1 - phi) * math.cos(phi + math.pi / 2)
-            vy = vx * math.sin(phi) + v1 * math.sin(theta1 - phi) * math.sin(phi + math.pi / 2)
-
+            vy = vy * math.sin(phi) + v1 * math.sin(theta1 - phi) * math.sin(phi + math.pi / 2)
             return vx, vy
-
         if self.coords[1] >= height - self.radius and 40 <= g * t + self.vy:
             #случай пола(скорость там положительна), когда скорость в полете превышает "условную допустимую 40"
             v2 = - (g * t + self.vy) * 0.5 #уменьшаем значение -0,5gt-0,5self.vy-gt=-1,5gt-0,5self.vu
@@ -115,13 +112,14 @@ class ball:
             self.vx *= -1
 
         #====работа с другими шариками относительно первого, если они есть
+        a = np.array(self.coords)
         for i, j in zip(other, range(len(other))):
             r = np.linalg.norm(np.array(self.coords)-np.array(i.coords))
             if self.radius + i.radius >= r > precitable_r(self, i, t + self.t0):
                 #случай столкновения
                 v1x, v1y = elastic_collision(self, i, t + self.t0)
                 v2x, v2y = elastic_collision(i, self, t + self.t0)
-                #на основе новых проекциях считаем конечные скорости
+                #получаем новое время и работаем с перемещением и скоростью
                 t1 = t + self.t0 - i.t0
                 v1y = v1y - g * t
                 v2y = v2y - g * t1
@@ -135,6 +133,7 @@ class ball:
                 i.vy = v2y
 
                 if r < self.radius + i.radius:
+                    #продолжение работы с упругим столкновением
                     r = self.radius + i.radius
                     if self.coords[1] < i.coords[1]:
                         ob1 = self
@@ -143,12 +142,12 @@ class ball:
                     else:
                         ob1 = i
                         ob2 = self
-                    a = np.array(self.coords)
-                    b = np.array(i.coords)
-                    ab = a - b
+                    #получаем норму координат обьектов
+                    ab = np.array(self.coords) - np.array(i.coords)
                     if ab[1] > 0:
                         ab = - ab
                     theta = math.atan2(ab[1], ab[0])
+                    #относительно угла выбираем коэффициент при попадении в [0;pi]
                     if ob1.radius == ob2.radius and theta in [0, math.pi]:
                         if ob1.coords[0] > ob2.coords[0]:
                             theta = 0

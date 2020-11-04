@@ -43,7 +43,7 @@ def main():
     screen = pygame.display.set_mode((width, height))
     pygame.display.set_caption("by Alexandrova Dasha")
 
-    value_remove = 35
+    value_remove = 15
     flag,click,clicked = True, False, False
     mouse_x, mouse_y, x, y = 0,0,0,0
     balls = []
