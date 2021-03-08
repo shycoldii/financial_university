@@ -19,6 +19,9 @@
 
    Шарик, загнанный в рамки и физические явления
    
++ [Файловый менеджер](https://github.com/shycoldii/financial_university/tree/master/practice%20on%20programming/file_manager)
+
+   Кроссплатформенное явление для управления файлами
   
   
   <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/134.png" align = "center" width="400">
