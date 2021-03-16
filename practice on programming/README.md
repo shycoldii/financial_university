@@ -22,6 +22,10 @@
 + [Файловый менеджер](https://github.com/shycoldii/financial_university/tree/master/practice%20on%20programming/file_manager)
 
    Кроссплатформенное явление для управления файлами
+   
++ [Эхо-сервер](https://github.com/shycoldii/financial_university/tree/master/practice%20on%20programming/echo_server)
+    
+   Сервер и клиент. Также в пакетах есть одновременный чат между несколькими клиентами
   
   
   <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/134.png" align = "center" width="400">
