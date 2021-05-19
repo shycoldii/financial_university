@@ -1,0 +1,106 @@
+17-May-21 12:04:12 - CONNECTION WITH <socket.socket fd=604, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 80), raddr=('127.0.0.1', 7676)>
+17-May-21 12:04:12 - CONNECTION WITH <socket.socket fd=620, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 80), raddr=('127.0.0.1', 7677)>
+17-May-21 12:04:12 - test.jpeg - 127.0.0.1 - 200 OK
+17-May-21 12:04:12 - SENT RESPONSE HTTP/1.1 200 OK
+Content-Type:image/jpeg
+Date: Mon May 17 12:04:12 2021
+Server: Server v0.0.1
+Content-Length: 147700
+Connection: close
+
+
+17-May-21 12:04:12 - CONNECTION WITH <socket.socket fd=652, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 80), raddr=('127.0.0.1', 7679)>
+17-May-21 12:04:12 - favicon.ico - 127.0.0.1 - 200 OK
+17-May-21 12:04:12 - SENT RESPONSE HTTP/1.1 200 OK
+Content-Type:image/x-icon
+Date: Mon May 17 12:04:12 2021
+Server: Server v0.0.1
+Content-Length: 1150
+Connection: close
+
+
+19-May-21 08:44:03 - SERVER IS STARTING ON 80
+19-May-21 08:44:12 - CONNECTION WITH <socket.socket fd=612, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 80), raddr=('127.0.0.1', 28046)>
+19-May-21 08:44:12 - settings.txt - 127.0.0.1 - 200 OK
+19-May-21 08:44:12 - CONNECTION WITH <socket.socket fd=608, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 80), raddr=('127.0.0.1', 28047)>
+19-May-21 08:44:12 - SENT RESPONSE HTTP/1.1 200 OK
+Content-Type:text/plain
+Date: Wed May 19 08:44:12 2021
+Server: Server v0.0.1
+Content-Length: 84
+Connection: close
+
+
+19-May-21 08:44:12 - favicon.ico - 127.0.0.1 - 200 OK
+19-May-21 08:44:12 - SENT RESPONSE HTTP/1.1 200 OK
+Content-Type:image/x-icon
+Date: Wed May 19 08:44:12 2021
+Server: Server v0.0.1
+Content-Length: 1150
+Connection: close
+
+
+19-May-21 08:44:14 - CONNECTION WITH <socket.socket fd=660, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 80), raddr=('127.0.0.1', 28054)>
+19-May-21 08:44:14 - CONNECTION WITH <socket.socket fd=628, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 80), raddr=('127.0.0.1', 28055)>
+19-May-21 08:44:14 - test.json - 127.0.0.1 - 200 OK
+19-May-21 08:44:14 - SENT RESPONSE HTTP/1.1 200 OK
+Content-Type:text/json
+Date: Wed May 19 08:44:14 2021
+Server: Server v0.0.1
+Content-Length: 16
+Connection: close
+
+
+19-May-21 08:44:14 - CONNECTION WITH <socket.socket fd=644, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 80), raddr=('127.0.0.1', 28056)>
+19-May-21 08:44:14 - favicon.ico - 127.0.0.1 - 200 OK
+19-May-21 08:44:14 - SENT RESPONSE HTTP/1.1 200 OK
+Content-Type:image/x-icon
+Date: Wed May 19 08:44:14 2021
+Server: Server v0.0.1
+Content-Length: 1150
+Connection: close
+
+
+19-May-21 08:48:00 - SERVER IS STARTING ON 80
+19-May-21 08:48:08 - CONNECTION WITH <socket.socket fd=548, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 80), raddr=('127.0.0.1', 28110)>
+19-May-21 08:48:08 - CONNECTION WITH <socket.socket fd=516, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 80), raddr=('127.0.0.1', 28111)>
+19-May-21 08:48:08 - test.json - 127.0.0.1 - 200 OK
+19-May-21 08:48:08 - SENT RESPONSE HTTP/1.1 200 OK
+Content-Type:text/json
+Date: Wed May 19 08:48:08 2021
+Server: Server v0.0.1
+Content-Length: 16
+Connection: close
+
+
+19-May-21 08:48:08 - favicon.ico - 127.0.0.1 - 200 OK
+19-May-21 08:48:08 - SENT RESPONSE HTTP/1.1 200 OK
+Content-Type:image/x-icon
+Date: Wed May 19 08:48:08 2021
+Server: Server v0.0.1
+Content-Length: 1150
+Connection: close
+
+
+19-May-21 08:48:09 - CONNECTION WITH <socket.socket fd=636, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 80), raddr=('127.0.0.1', 28112)>
+19-May-21 08:48:36 - setting.txt - 127.0.0.1 - 200 OK
+19-May-21 08:48:36 - setting.txt - 127.0.0.1 - 404 NOT FOUND
+19-May-21 08:48:36 - SENT RESPONSE HTTP/1.1 404 NOT FOUND
+Content-Type:text/plain
+Date: Wed May 19 08:48:36 2021
+Server: Server v0.0.1
+Content-Length: 0
+Connection: close
+
+
+19-May-21 08:48:36 - CONNECTION WITH <socket.socket fd=664, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 80), raddr=('127.0.0.1', 28118)>
+19-May-21 08:48:41 - settings.txt - 127.0.0.1 - 200 OK
+19-May-21 08:48:41 - SENT RESPONSE HTTP/1.1 200 OK
+Content-Type:text/plain
+Date: Wed May 19 08:48:41 2021
+Server: Server v0.0.1
+Content-Length: 74
+Connection: close
+
+
+19-May-21 08:48:42 - CONNECTION WITH <socket.socket fd=676, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 80), raddr=('127.0.0.1', 28122)>

@@ -1,0 +1,4 @@
+80
+D:\university\2 year\pc_python\pc_5_6\WEB_6
+8192
+html jpeg png gif
