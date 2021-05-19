@@ -1,0 +1,735 @@
+Порт 9090 прослушивается, maxsize = 500
+Порт 9090 прослушивается, maxsize = 500
+Порт 9090 прослушивается, maxsize = 500
+Порт 9090 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 26941)
+Порт 9090 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 26981)
+Вошел пользователь fff
+Порт 9090 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 27042)
+Порт 9090 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 27085)
+Вошел пользователь darerror
+Порт 9090 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 27115)
+Порт 9090 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 27144)
+Вошел пользователь darerror
+Порт 9090 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 27167)
+Вошел пользователь darerror
+Порт 9090 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 27204)
+Порт 9090 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 27236)
+Вошел пользователь darerror
+Порт 9090 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 27258)
+Порт 9090 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 27301)
+Вошел пользователь darerror
+ls darerror
+Порт 9090 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 27357)
+Вошел пользователь darerror
+ls darerror
+Порт 9090 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 28494)
+Вошел пользователь darerror
+ls darerror
+Порт 9090 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 28548)
+Вошел пользователь darerror
+ls darerror
+Порт 9090 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 28574)
+Вошел пользователь darerror
+ls darerror
+Порт 9090 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 28598)
+Вошел пользователь darerror
+ls darerror
+Порт 9090 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 28676)
+Вошел пользователь darerror
+ls darerror
+Порт 9090 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 28741)
+Вошел пользователь darerror
+ls darerror
+Порт 9090 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 28785)
+Вошел пользователь darerror
+ls darerror
+Порт 9090 прослушивается, maxsize = 500
+Порт 9090 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 29129)
+Вошел пользователь darerror
+ls darerror
+Порт 9090 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 29160)
+Вошел пользователь darerror
+ls darerror
+Порт 9090 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 29274)
+Вошел пользователь darerror
+ls darerror
+Порт 9090 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 29299)
+Вошел пользователь darerror
+ls darerror
+Порт 9090 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 29323)
+Вошел пользователь darerror
+ls darerror
+Порт 9090 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 29365)
+Вошел пользователь darerror
+ls darerror
+Порт 9090 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 29383)
+Вошел пользователь darerror
+ls darerror
+Порт 9090 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 29417)
+Вошел пользователь darerror
+ls darerror
+ls darerror
+Порт 9090 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 29485)
+Вошел пользователь darerror
+pwd darerror
+pwd d darerror
+Порт 9090 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 29519)
+Вошел пользователь darerror
+mkdir darerror
+mkdir test darerror
+Порт 9090 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 29590)
+Вошел пользователь dare
+Порт 9090 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 29631)
+Вошел пользователь darerror
+ls darerror
+mkdir ls darerror
+Порт 9090 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 29660)
+Вошел пользователь darerror
+mkdir test darerror
+Порт 9090 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 29681)
+Вошел пользователь dare
+mkdir 12 dare
+mkdir 12 dare
+Порт 9090 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 29695)
+Вошел пользователь dare
+mkdir 12 dare
+mkdir 12 dare
+mkdir 13 dare
+Порт 9090 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 29722)
+Вошел пользователь dare
+pwd dare
+ls dare
+Порт 9090 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 29758)
+Вошел пользователь dare
+Порт 9090 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 29800)
+Вошел пользователь dare
+Порт 9090 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 29840)
+Вошел пользователь dare
+Порт 9090 прослушивается, maxsize = 500
+Порт 9090 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 29905)
+Вошел пользователь darerror
+Порт 9090 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 29973)
+Вошел пользователь dare
+Порт 9090 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 30045)
+Вошел пользователь dare
+Подключился ('127.0.0.1', 30068)
+Вошел пользователь dare
+Порт 9090 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 30098)
+Вошел пользователь dare
+ls dare
+Порт 9090 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 30161)
+Вошел пользователь dare
+recv 12 dare
+Подключился ('127.0.0.1', 30179)
+Вошел пользователь dare
+recv 12 dare
+Порт 9090 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 30204)
+Вошел пользователь dare
+recv 12.txt dare
+Подключился ('127.0.0.1', 30261)
+Порт 9090 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 30276)
+Вошел пользователь dare
+recv 12 dare
+Подключился ('127.0.0.1', 30311)
+Порт 9090 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 30336)
+Порт 9090 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 30351)
+Вошел пользователь dare
+recv 12.txt dare
+Порт 9090 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 30371)
+Вошел пользователь dare
+recv 12.txt dare
+send 12.txt dare
+15 dare
+Порт 9090 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 30406)
+Вошел пользователь dare
+send 12.txt dare
+Порт 9090 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 30426)
+Вошел пользователь dare
+send 12.txt dare
+Порт 9090 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 30455)
+Вошел пользователь dare
+send 12.txt dare
+Порт 9090 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 30477)
+Вошел пользователь dare
+recv 12.txt dare
+send fff.txt dare
+Порт 9090 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 30521)
+Вошел пользователь dare
+send fff.txt dare
+Порт 9090 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 30557)
+Вошел пользователь dare
+send fff.txt dare
+Порт 9090 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 30580)
+Вошел пользователь dare
+send fff.txt dare
+Порт 9090 прослушивается, maxsize = 500
+Порт 9090 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 30754)
+Вошел пользователь dare
+pwd dare
+cd .. dare
+cd 12 dare
+pwd dare
+cd .. dare
+rmdir 12 dare
+rename 13 12 dare
+touch test.txt dare
+touch 12/test.txt dare
+cat  dare
+cat 12 dare
+cat 12/test.txt dare
+Порт 9090 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 30811)
+Вошел пользователь dare
+mkdir 12 dare
+mkdir 13 dare
+cat 12/test.txt dare
+Порт 9090 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 30842)
+Вошел пользователь dare
+cat 12/test.txt dare
+Порт 9090 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 30871)
+Вошел пользователь dare
+cat 12 dare
+cat 12/test.txt dare
+cat 12/test.txt dare
+cat 12/test.txt dare
+pwd dare
+cat 12.txt dare
+cat fff.txt dare
+Подключился ('127.0.0.1', 30893)
+Порт 9090 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 30912)
+Вошел пользователь dare
+cat 12/test.txt dare
+ dare
+Подключился ('127.0.0.1', 30986)
+Порт 9090 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 31055)
+Зарегистрировался пользователь Test
+ Test
+Подключился ('127.0.0.1', 31075)
+Зарегистрировался пользователь Test
+pwd Test
+mkdir testdir Test
+ls Test
+cd testdir Test
+pwd Test
+send main.txt Test
+Подключился ('127.0.0.1', 31100)
+Зарегистрировался пользователь Test
+pwd Test
+mkdir testdir Test
+ Test
+Подключился ('127.0.0.1', 31117)
+Зарегистрировался пользователь Test
+pwd Test
+mkdir testdir Test
+ls Test
+cd testdir Test
+pwd Test
+send fff.txt Test
+Порт 9090 прослушивается, maxsize = 500
+Порт 8080 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 31436)
+Зарегистрировался пользователь Test
+pwd Test
+mkdir testdir Test
+ Test
+Порт 8080 прослушивается, maxsize = 500
+Порт 8080 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 31510)
+Зарегистрировался пользователь Test
+pwd Test
+ls Test
+cd testdir Test
+pwd Test
+send fff.txt Test
+ Test
+Подключился ('127.0.0.1', 31543)
+Зарегистрировался пользователь Test
+pwd Test
+ls Test
+cd testdir Test
+pwd Test
+send fff.txt Test
+Порт 8080 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 31590)
+Зарегистрировался пользователь Test
+pwd Test
+ls Test
+cd testdir Test
+pwd Test
+send fff.txt Test
+5 Test
+cd .. Test
+Подключился ('127.0.0.1', 31617)
+Зарегистрировался пользователь Test
+pwd Test
+ls Test
+cd testdir Test
+pwd Test
+send fff.txt Test
+5 Test
+cd .. Test
+Порт 8080 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 31657)
+Зарегистрировался пользователь Test
+pwd Test
+ls Test
+cd testdir Test
+pwd Test
+send fff.txt Test
+5 Test
+cd .. Test
+Порт 8080 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 31674)
+Зарегистрировался пользователь Test
+pwd Test
+ls Test
+cd testdir Test
+pwd Test
+send fff.txt Test
+5 Test
+cd .. Test
+Порт 8080 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 31724)
+Зарегистрировался пользователь Test
+Порт 8080 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 31748)
+Зарегистрировался пользователь Test
+pwd Test
+ls Test
+cd testdir Test
+pwd Test
+send fff.txt Test
+5cd .. Test
+ Test
+Порт 8080 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 31771)
+Зарегистрировался пользователь Test
+pwd Test
+ls Test
+cd testdir Test
+pwd Test
+send fff.txt Test
+5 Test
+cd .. Test
+Порт 8080 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 31814)
+Зарегистрировался пользователь Test
+pwd Test
+ls Test
+cd testdir Test
+pwd Test
+send fff.txt Test
+5 Test
+cd .. Test
+Порт 8080 прослушивается, maxsize = 500
+Порт 8080 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 31857)
+Зарегистрировался пользователь Test
+pwd Test
+ls Test
+cd testdir Test
+pwd Test
+send fff.txt Test
+5 Test
+cd .. Test
+Порт 8080 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 31885)
+Зарегистрировался пользователь Test
+pwd Test
+ls Test
+cd testdir Test
+pwd Test
+send fff.txt Test
+5 Test
+cd .. Test
+Порт 8080 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 31931)
+Зарегистрировался пользователь Test
+pwd Test
+ls Test
+cd testdir Test
+pwd Test
+send fff.txt Test
+5 Test
+cd .. Test
+Порт 8080 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 31993)
+Вошел пользователь dare
+cd dare
+cd .. dare
+cd 12 dare
+cd .. dare
+Порт 8080 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 32123)
+Подключился ('127.0.0.1', 32143)
+Зарегистрировался пользователь Test
+pwd Test
+ls Test
+cd testdir Test
+pwd Test
+send fff.txt Test
+cd .. Test
+rmdir testdir Test
+ Test
+Подключился ('127.0.0.1', 32152)
+Зарегистрировался пользователь Test
+pwd Test
+ls Test
+ Test
+Подключился ('127.0.0.1', 32163)
+Зарегистрировался пользователь Test
+pwd Test
+ls Test
+ Test
+Порт 8080 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 32178)
+Зарегистрировался пользователь Test
+pwd Test
+ls Test
+ Test
+Подключился ('127.0.0.1', 32201)
+Зарегистрировался пользователь Test
+pwd Test
+ls Test
+cd testdir Test
+pwd Test
+send fff.txt Test
+Порт 8080 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 32225)
+Зарегистрировался пользователь Test
+pwd Test
+ls Test
+cd testdir Test
+pwd Test
+send fff.txt Test
+Порт 8080 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 32256)
+Зарегистрировался пользователь Test
+pwd Test
+ls Test
+cd testdir Test
+pwd Test
+send fff.txt Test
+cd .. Test
+rmdir testdir Test
+ Test
+Порт 8080 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 32299)
+Зарегистрировался пользователь Test
+pwd Test
+mkdir testdir Test
+ls Test
+cd testdir Test
+pwd Test
+send fff.txt Test
+Порт 8080 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 32379)
+Зарегистрировался пользователь Test
+pwd Test
+mkdir testdir Test
+ls Test
+cd testdir Test
+pwd Test
+send fff.txt Test
+Порт 8080 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 32411)
+Зарегистрировался пользователь Test
+pwd Test
+mkdir testdir Test
+ls Test
+cd testdir Test
+pwd Test
+send fff.txt Test
+Порт 8080 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 32447)
+Зарегистрировался пользователь Test
+pwd Test
+mkdir testdir Test
+ls Test
+cd testdir Test
+pwd Test
+send fff.txt Test
+cd .. Test
+rmdir testdir Test
+ Test
+Порт 8080 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 32464)
+Зарегистрировался пользователь Test
+pwd Test
+mkdir testdir Test
+ls Test
+cd testdir Test
+pwd Test
+send fff.txt Test
+Порт 8080 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 32500)
+Зарегистрировался пользователь Test
+pwd Test
+mkdir testdir Test
+ls Test
+cd testdir Test
+pwd Test
+send fff.txt Test
+Порт 8080 прослушивается, maxsize = 500
+Порт 8080 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 32553)
+Зарегистрировался пользователь Test
+pwd Test
+mkdir testdir Test
+ls Test
+cd testdir Test
+pwd Test
+send fff.txt Test
+Порт 8080 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 32595)
+Зарегистрировался пользователь Test
+pwd Test
+mkdir testdir Test
+ Test
+Порт 8080 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 32616)
+Зарегистрировался пользователь Test
+pwd Test
+mkdir testdir Test
+ls Test
+cd testdir Test
+pwd Test
+send fff.txt Test
+Порт 8080 прослушивается, maxsize = 500
+Порт 8080 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 32651)
+Зарегистрировался пользователь Test
+pwd Test
+mkdir testdir Test
+ls Test
+cd testdir Test
+pwd Test
+send fff.txt Test
+Порт 8080 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 32668)
+Зарегистрировался пользователь Test
+pwd Test
+mkdir testdir Test
+ Test
+Порт 8080 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 32695)
+Зарегистрировался пользователь Test
+pwd Test
+mkdir testdir Test
+ls Test
+cd testdir Test
+pwd Test
+send fff.txt Test
+Порт 8080 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 32756)
+Зарегистрировался пользователь Test
+pwd Test
+mkdir testdir Test
+ls Test
+cd testdir Test
+pwd Test
+send fff.txt Test
+cd .. Test
+rmdir testdir Test
+ Test
+Порт 8080 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 32779)
+Зарегистрировался пользователь Test
+pwd Test
+mkdir testdir Test
+ls Test
+cd testdir Test
+pwd Test
+send fff.txt Test
+cd .. Test
+rmdir testdir Test
+ Test
+Порт 8080 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 48526)
+Порт 8080 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 48598)
+Порт 8080 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 48668)
+Порт 8080 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 48691)
+Порт 8080 прослушивается, maxsize = 500
+Подключился ('127.0.0.1', 48708)
+Port 8080 is listening now, maxsize = 500
+Port 8080 is listening now, maxsize = 500
+Connection with ('127.0.0.1', 50519)
+User has entered: dare
+ls dare
+pwd dare
+Port 8080 is listening now, maxsize = 500
+Connection with ('127.0.0.1', 50572)
+User has entered: dare
+ls dare
+pwd dare
+Port 8080 is listening now, maxsize = 500
+Connection with ('127.0.0.1', 50764)
+User has entered: dare
+ls dare
+pwd dare
+cd .. dare
+cd 12 dare
+Port 8080 is listening now, maxsize = 500
+Connection with ('127.0.0.1', 50788)
+User has registered: dd
+ls dd
+cd dd
+Port 8080 is listening now, maxsize = 500
+Connection with ('127.0.0.1', 50862)
+User has entered: dd
+ls dd
+cd dd
+cd 12 dd
+send 12.txt dd
+11 dd
+Port 8080 is listening now, maxsize = 500
+Connection with ('127.0.0.1', 50896)
+User has entered: dd
+send 12.txt dd
+Port 8080 is listening now, maxsize = 500
+Connection with ('127.0.0.1', 50943)
+User has entered: dd
+send 12.txt dd
+ls dd
+cd dd
+cd 12.txt dd
+rm 12.txt dd
+Port 8080 is listening now, maxsize = 500
+Connection with ('127.0.0.1', 50982)
+User has entered: dd
+rm 12.txt dd
+touch 1.txt dd
+mkdir 12 dd
+rmdir 12 dd
+rmdir 12 dd
+pwd dd
+send 12.txt dd
+cat 12.txt dd
+cd dd
+mkdir test dd
+cd test dd
+touch 1.txt dd
+cat 1.txt dd
+rename 1.txt 2.txt dd
+Connection with ('127.0.0.1', 51044)
+User has entered: dare
+recv 12.txt dare
+recv fff.txt dare
+recv dfgh.txt dare
+Port 8080 is listening now, maxsize = 500
+Connection with ('127.0.0.1', 51089)
+User has entered: dare
+recv defgh dare
+Connection with ('127.0.0.1', 51116)
+User has entered: dare
+recv dfgh dare
+Port 8080 is listening now, maxsize = 500
+Connection with ('127.0.0.1', 51141)
+User has entered: dare
+recv dfgh dare
+Port 8080 is listening now, maxsize = 500
+Connection with ('127.0.0.1', 51171)
+User has entered: dare
+recv dfghn dare
+Connection with ('127.0.0.1', 51176)
+User has entered: dare
+recv dfgh dare
+Connection with ('127.0.0.1', 51226)
+User has entered: dare
+recv sdfgh dare
+recv fff.txt dare
+Connection with ('127.0.0.1', 51264)
+User has entered: dare
+recv fff.txt dare
+recv sdfgh dare
+send fff.txt dare
+send sdfgh dare
+Connection with ('127.0.0.1', 51295)
+User has entered: dare
+send fff.txt dare
+send sdfgh dare
+Port 8080 is listening now, maxsize = 500
+Port 8080 is listening now, maxsize = 500
+Connection with ('127.0.0.1', 51871)
+User has registered: rr
+pwd rr
+mkdir test rr
+ls rr
+cd test rr
+pwd rr
+send fff.txt rr
+cd .. rr
+rmdir test rr
+ rr
+Connection with ('127.0.0.1', 63716)
+Port 8080 is listening now, maxsize = 500
+Connection with ('127.0.0.1', 28152)
+Port 8080 is listening now, maxsize = 500
+Connection with ('127.0.0.1', 28180)
+User has registered: ddddddd
+ls ddddddd
+touch text.txt ddddddd
+ls ddddddd
