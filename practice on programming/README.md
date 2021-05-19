@@ -27,5 +27,20 @@
     
    Сервер и клиент. Также в пакетах есть одновременный чат между несколькими клиентами
   
++ [Web-сервер](https://github.com/shycoldii/financial_university/tree/master/practice%20on%20programming/web_server)
+    
+   Сервер и обработка get-запросов 
+   
++ [FTP-сервер](https://github.com/shycoldii/financial_university/tree/master/practice%20on%20programming/ftp_server)
+    
+   FTP-сервер: регистрация и авторизация, запросы файлового менеджера
   
++ [Asyncio-сервер](https://github.com/shycoldii/financial_university/tree/master/practice%20on%20programming/asyncio_server)
+    
+   Асинхронный сервер с использованием asyncio
+   
++ [Assimetric_ciphers](https://github.com/shycoldii/financial_university/tree/master/practice%20on%20programming/assimetric_ciphers)
+    
+   Протокол Диффи-Хеллмана. Клиент и сервер
+   
   <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/134.png" align = "center" width="400">
