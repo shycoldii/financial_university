@@ -1,0 +1,32 @@
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script>
+window.onload = getf;
+var M = new Array("red","blue","green","magenta")
+function getf() {
+            with (document.frm.colors) {
+		options.length=M.length
+		for (i=0;i<M.length; i++){
+			options[i].value =M[i]
+			options[i].text = M[i]
+		}
+	}
+	}
+function setColor(){
+      document.body.style.background = document.getElementById("color").value;
+;
+}
+
+</script>
+<body align=center>
+<h1>ПИ19-3 Александрова Дарья</h1>
+<h3>Вариант-1</h3>
+<br><input style=height:100px;width:400px;  type='button' onclick="setColor()" value='Раскрасить'>
+
+
+<form name="frm">
+ <select name="colors" id="color" > </select>
+ </form>
+</body>
+
+
+
