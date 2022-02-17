@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="counter">Кнопка нажата 0 раз</string>
+    <string name="increase">увеличить счетчик:)</string>
+    <string name="decrease">уменьшить счетчик:(</string>
+    <string name="reset">сброс -_-</string>
+</resources>
