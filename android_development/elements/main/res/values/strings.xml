@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="hello">%s is Learning AS!</string>
+    <string name="updateButton">update textView</string>
+    <string name="name">Dasha</string>
+    <string name="ok">Нажата кнопка OK</string>
+    <string name="cancel">Нажата кнопка Cancel</string>
+</resources>
