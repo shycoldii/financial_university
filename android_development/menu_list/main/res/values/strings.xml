@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="add">add</string>
+    <string name="edit">edit</string>
+    <string name="delete">delete</string>
+    <string name="copy">copy</string>
+    <string name="paste">paste</string>
+    <string name="exit">exit</string>
+    <string name="info">info</string>
+    <string name="help">help</string>
+</resources>
