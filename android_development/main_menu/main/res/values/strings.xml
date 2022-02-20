@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Угадай число!</string>
+    <string name="behind">Недочет!</string>
+    <string name="ahead">Перелет!</string>
+    <string name="hit">В точку!</string>
+    <string name="input_value">Ввести значение</string>
+    <string name="play_more">Сыграть еще</string>
+    <string name="try_to_guess_easy">Попробуйте угадать число (1 &#8211; 100)</string>
+    <string name="try_to_guess_normal">Попробуйте угадать число (1 &#8211; 1000)</string>
+    <string name="try_to_guess_hard">Попробуйте угадать число (1 &#8211; 10000)</string>
+    <string name="error">Неверный ввод!</string>
+    <string name="exit">exit</string>
+    <string name="_100">100</string>
+    <string name="_1000">1000</string>
+    <string name="_10000">10000</string>
+    <string name="reset">reset</string>
+</resources>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_exit"
+        android:title="@string/exit">
+    </item>
+    <item
+        android:id="@+id/menu_100"
+        android:title="@string/_100">
+    </item>
+    <item
+        android:id="@+id/menu_1000"
+        android:title="@string/_1000">
+    </item>
+    <item
+        android:id="@+id/menu_10000"
+        android:title="@string/_10000">
+    </item>
+    <item
+        android:id="@+id/menu_reset"
+        android:title="@string/reset">
+    </item>
+</menu>
