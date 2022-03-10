@@ -1,0 +1,71 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnTime"
+        android:text="Show time">
+    </Button>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnDate"
+        android:text="Show date">
+    </Button>
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="305dp"
+        android:layout_height="76dp"
+        android:layout_gravity="center_horizontal"
+        android:text="Your name is " />
+
+    <EditText
+        android:id="@+id/etLName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp">
+    </EditText>
+
+    <Button
+        android:id="@+id/btnName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="20dp"
+        android:text="Input name/color" />
+
+    <EditText
+        android:id="@+id/etLURL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp">
+    </EditText>
+
+    <Button
+        android:id="@+id/btnURL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="20dp"
+        android:text="Find" />
+
+    <TextView
+        android:id="@+id/colorTest"
+        android:layout_width="305dp"
+        android:layout_height="76dp"
+        android:layout_gravity="center_horizontal"
+        android:text="TEST" />
+
+    <Button
+        android:id="@+id/btnAl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="20dp"
+        android:text="Input Size" />
+
+</LinearLayout>

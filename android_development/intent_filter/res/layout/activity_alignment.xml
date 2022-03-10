@@ -1,0 +1,29 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp">
+
+        <EditText
+            android:id="@+id/editTextAl"
+            android:layout_width="203dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="51"
+            android:layout_weight="1">
+        </EditText>
+    </LinearLayout>
+    <Button
+        android:id="@+id/btnOKA"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="OK">
+    </Button>
+
+</LinearLayout>
