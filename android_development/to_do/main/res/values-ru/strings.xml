@@ -1,0 +1,9 @@
+<resources>
+    <string name="tasks">ЗАДАЧИ</string>
+    <string name="new_task">Просто введи свою задачу!</string>
+    <string name="delete_task">Удалить задачу</string>
+    <string name="save">СОХРАНИТЬ</string>
+    <string name="confirm">ПОДТВЕРДИТЬ</string>
+    <string name="cancel">ОТМЕНИТЬ</string>
+    <string name="are_you_sure">Вы уверены, что хотите удалить эту задачу?</string>
+</resources>

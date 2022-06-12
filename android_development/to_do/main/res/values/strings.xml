@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name" translatable="false">do me</string>
+    <string name="tasks">TASKS</string>
+    <string name="new_task">Just type your task!</string>
+    <string name="delete_task">Delete task</string>
+    <string name="save">SAVE</string>
+    <string name="confirm">Confirm</string>
+    <string name="cancel">Cancel</string>
+    <string name="are_you_sure">Are you sure you want to delete this task?</string>
+</resources>
