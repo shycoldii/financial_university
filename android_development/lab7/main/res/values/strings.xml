@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="main">Главная</string>
+    <string name="scroll">Лента</string>
+    <string name="messages">Сообщения</string>
+    <string name="friends">Друзья</string>
+    <string name="addToFriends">Добавить в друзья</string>
+    <string name="defaultName">Имя</string>
+    <string name="newFriend" />
+</resources>

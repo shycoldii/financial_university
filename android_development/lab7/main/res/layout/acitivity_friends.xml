@@ -1,0 +1,20 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="match_parent"
+        android:layout_height="87dp"
+        android:text="@string/friends"
+        android:textAlignment="center"
+        android:textSize="55sp" />
+    <TextView
+        android:id="@+id/newFriends"
+        android:layout_width="match_parent"
+        android:layout_height="87dp"
+        android:textAlignment="center"
+        android:textSize="25sp" />
+</LinearLayout>
